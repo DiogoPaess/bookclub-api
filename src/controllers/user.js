@@ -73,7 +73,7 @@ class userController {
         where: { email: req.body.email },
       });
 
-      if (!existedUser) {
+      if (existedUser) {
         return res.status(400).json({ error: "Usuário já existe" });
       }
 
